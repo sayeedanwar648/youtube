@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>object oriented programming</h1>
+</body>
+</html>
+<script>
+// class car {
+//     constructor(n,b) {
+//         this.name=n;
+//         this.wheels=4;
+//         this.brand=b;
+//     }
+// }
+// class sedan extends car{
+//     constructor(n,b){
+//         super(n,b);
+//         this.sunroof=true
+//     }
+// }
+//three  ways to create object ;
+
+
+//1 let obj={} objject literal;
+//2 object.create()
+//3 constructor funnction
+//4 classes
+
+//create a login /signup system
+
+// user
+//Admin
+//Author
+
+//functionalities
+//user can signup-
+
+class User {
+    #password;
+    constructor(name){
+        this.name=name;
+    }
+
+    #validateUsername(userName){
+//validating username through if else
+//by default,we are simulating all username are correct
+
+        return true;
+
+    }
+    #validatePassword(password){
+
+        //validating username through if else
+//by default,we are simulating all password are correct
+
+        return true;
+
+    }
+
+    signUp(userName,password){
+       //when user inputs valid username and password 
+       let isValidated=false
+
+
+       isValidated=this.#validateUsername(userName)&&this.#validatePassword(password);
+       if(isValidated){
+           this.userName=userName
+           this.#password=password
+           console.log('user signed up successfully')
+       }
+       else{
+           console.log('signup failure')
+       }
+
+    }
+    login (username,password){
+        if(username===this.userName&&password===this.#password){
+            console.log('logged in successfully')
+        }
+        else{
+            console.log('authentication failed')
+        }
+    }
+// 1st way to change password
+    // changePassword(newpassword){
+    //     this.#password=newpassword
+
+    // }
+
+//second way to change password
+    set password(newpassword){
+        this.#password=newpassword
+    }
+    get name11(){
+        return this.name
+    }
+
+
+
+}
+
+
+
+
+//#-encapsulation make variable private or method
+
+
+class Author extends User{
+    constructor(name)
+    {
+        super(name);
+    }
+}
+
+class Admin extends User{
+    constructor(name){
+        super(name)
+    }
+}
+
+
+
+
+
+
+
+let ad=new Admin('sayeed')
+console.log(ad)
+ad.signUp('sayeed123','sayeed1234')
+ad.password='bhag bhai'
+ad.name11();
+
+// ad.login('sayeed123','sayeed1234')
+// let a1=new Author('chetan bhagat');
+// console.log(a1)
+// a1.signUp('pablo123','pablo1234')
+// a1.login('pablo123','pablo1234')
+
+// let u1=new User('Pablo')
+// console.log(u1)
+// u1.signUp('pablo123','pablo1234')
+// u1.login('pablo123','pablo1234')
+
+//*** borrowing the property of parent--extende
+
+
+
+
+
+//change of password
+
+
+
+</script>
